@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+</head>
+<body>
+    <h1>Password Validation</h1>
+    <form>
+        <label for="passwordInput">Enter Password:</label>
+        <input type="password" id="passwordInput" name="passwordInput" required>
+        <button type="button" onclick="validatePassword()">Check Password</button>
+    </form>
+    <br>
+    <p>
+        -> At least 8 characters long.
+        <br>
+         -> Contains at least one uppercase letter, one lowercase letter, one digit, and one 
+special character.
+    </p>
+    <p id="validationResult"></p>
+
+    <script>
+        function validatePassword() {
+            const passwordInput = document.getElementById("passwordInput");
+            const validationResult = document.getElementById("validationResult");
+
+            const password = passwordInput.value;
+
+            if (password.length >= 8 &&
+                /[a-z]/.test(password) &&
+                /[A-Z]/.test(password) &&
+                /\d/.test(password) &&
+                /[!@#$%^&*]/.test(password)) {
+                validationResult.textContent = "Password is valid!";
+                validationResult.style.color = "green";
+            } else {
+                validationResult.textContent = "Password is not valid. Please follow the criteria.";
+                validationResult.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

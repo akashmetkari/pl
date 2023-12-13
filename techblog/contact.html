@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Additional or modified CSS styles for the updated UI */
+      /* Update styles as per your design */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      /* Style for the contact form */
+      .contact-form {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      /* Form styles */
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      .contact-form button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .contact-form button:hover {
+        background-color: #0056b3;
+      }
+      /* Error message style */
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- Additional navigation links if needed -->
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-form">
+        <!-- Contact form -->
+        <form id="contactForm">
+          <!-- Form fields for name, email, message, etc. -->
+          <input type="text" id="name" placeholder="Name"  />
+          <span class="error-message" id="nameError"></span>
+          <input type="email" id="email" placeholder="Email"  />
+          <span class="error-message" id="emailError"></span>
+          <textarea id="message" placeholder="Your message" ></textarea>
+          <span class="error-message" id="messageError"></span>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+     <footer>
+    <p>&copy; 2023-24 Technical Blog. All Rights Reserved.</p>
+  </footer>
+
+    <script>
+      // Form validation
+      const form = document.getElementById("contactForm");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+
+      form.addEventListener("submit", function (event) {
+        let isValid = true;
+
+        // Validate name
+        if (nameInput.value.trim() === "") {
+          nameError.textContent = "Please enter your name";
+          isValid = false;
+        } else {
+          nameError.textContent = "";
+        }
+
+        // Validate email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+          emailError.textContent = "Please enter a valid email address";
+          isValid = false;
+        } else {
+          emailError.textContent = "";
+        }
+
+        // Validate message
+        if (messageInput.value.trim() === "") {
+          messageError.textContent = "Please enter your message";
+          isValid = false;
+        } else {
+          messageError.textContent = "";
+        }
+
+        // Prevent form submission if validation fails
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

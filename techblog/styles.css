@@ -1,0 +1,110 @@
+/* Reset styles */
+/* ... (same as before) ... */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #2c3e504e;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+/* Navigation */
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #52677c4e;
+    padding: 10px 0;
+    transition: all ease 0.3s;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #89df9d;
+    transform: scale(2);
+}
+
+main {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+.card-content {
+    padding: 15px;
+    background-color: transparent;
+    /* Set transparent background */
+}
+
+.card h2 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.card p {
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

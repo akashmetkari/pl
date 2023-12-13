@@ -1,0 +1,94 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+header img {
+    width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.5em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    background-image: url("banner.jpg");
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 1em;
+}
+
+.hero p {
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.problem-statement {
+    padding: 2em;
+    border-top: 1px solid #eee;
+}
+
+.problem-statement h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.problem-statement p {
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}

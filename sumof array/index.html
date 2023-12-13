@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum Even Numbers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="titlebar">
+            <h1>SUM + EVEN  + NUMBERS</h1>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="ip">
+        <h3>Enter the numbers :  </h3>
+        <input type="text" id="numberInput" placeholder="Enter numbers separated by commas">
+    </div>
+   
+    <br>
+    <br>
+
+    <div class="button">   
+         <button  onclick="calculateSum()">Calculate</button>
+    </div>
+    
+    <br>
+
+    <p id="result"></p>
+
+    <br>
+
+    <div class="foot">
+        
+    </div>
+
+
+    <script>
+        function calculateSum() {
+            const inputElement = document.getElementById("numberInput");
+            const resultElement = document.getElementById("result");
+
+            // Get the input value and split it into an array of numbers
+            const input = inputElement.value;
+            const numbers = input.split(",").map(Number);
+
+            // Calculate the sum of even numbers
+            const sum = numbers.reduce(function (acc, current) {
+                if (current % 2 === 0) {
+                    return acc + current;
+                }
+                return acc;
+            }, 0);
+
+            // Display the result
+            resultElement.textContent = `Sum of even numbers: ${sum}`;
+        }
+    </script>
+
+   
+</body>
+</html>

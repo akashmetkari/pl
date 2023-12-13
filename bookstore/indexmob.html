@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Bookstore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #ee760c;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #bebfc7;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        /* Hamburger menu styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        .menu-icon i {
+            font-size: 24px;
+        }
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                display: block;
+                margin: 0;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+        .book {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            height: 350px;
+            width: 350px;
+            display: inline-block;
+            background-color: rgb(240, 170, 240);
+        }
+        .book img {
+            height: 10px;
+            width: 10 px;
+            height: auto;
+        }
+        .cart {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #534242;
+            color: #fff;
+            padding: 15px 200px;
+            border-radius: 1%;
+        }
+        /* Rest of your styles remain the same */
+        /* ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Akash Bookstore</h1>
+    </header>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="cart" id="cart"><i class="fa-solid fa-cart-shopping"></i> 0</div>
+    </nav>
+    <section id="featured">
+        <h2>Featured Books</h2>
+        <!-- Featured books go here -->
+    </section>
+    <section id="books">
+        <h2>All Books</h2>
+        <!-- All books go here -->
+    </section>
+    <!-- Rest of your HTML content -->
+    <script>
+          const books = [
+            {
+                title: "Mrityunjay",
+                author: "Shivaji Sawant",
+                image: "bk1.jpeg"
+            },
+            {
+                title: "Yayati",
+                author: "V. S. Khandekar",
+                image: "th.jpeg"
+            },
+            {
+                title: "Chhava",
+                author: "Shivaji Sawant",
+                image: "chhava.jpeg"
+
+            },
+            {
+                title: "Asur",
+                author: "Anand Nilkantan",
+                image: "asur.jpeg"
+
+            },
+            {
+                title: "Loksatta",
+                author: "V. S. K",
+                image: "lok.jpeg"
+
+            },
+            {
+                title: "Duniyadari",
+                author: "Suhas S.",
+                image: "duniya.jpeg"
+
+            }
+
+        ];
+        function updateCartCount() {
+    cartElement.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> ${cartCount}`;
+}
+
+        // Initialize the cart count
+        let cartCount = 0;
+        const cartElement = document.getElementById("cart");
+        
+        
+
+        // Function to add a book to the cart
+        function addToCart() {
+            cartCount++;
+            cartElement.textContent = cartCount;
+        }
+
+        // Display featured books
+        const featuredSection = document.getElementById("featured");
+        for (const book of books) {
+            const bookElement = document.createElement("div");
+            bookElement.classList.add("book");
+            bookElement.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <h3>${book.title}</h3>
+                <p>${book.author}</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            `;
+            featuredSection.appendChild(bookElement);
+        }
+
+        // Display all books
+        const booksSection = document.getElementById("books");
+        for (const book of books) {
+            const bookElement = document.createElement("div");
+            bookElement.classList.add("book");
+            bookElement.innerHTML = `
+                <img src="${book.image}" alt="${book.title}">
+                <h3>${book.title}</h3>
+                <p>${book.author}</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            `;
+            booksSection.appendChild(bookElement);
+        }
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+
+        // Rest of your JavaScript code
+        // ...
+    </script>
+</body>
+</html>

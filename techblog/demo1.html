@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>innerHTML Example</title>
+</head>
+<body>
+
+<div id="myDiv">
+  <p>Hello, this is some content!</p>
+</div>
+
+<button onclick="changeContent()">Change Content</button>
+
+<script>
+function changeContent() {
+  // Accessing the div element with id 'myDiv'
+  var element = document.getElementById("myDiv");
+  
+  // Changing its innerHTML
+  element.innerHTML = "<p>New content here!</p><p>More content!</p>";
+}
+</script>
+
+</body>
+</html>
